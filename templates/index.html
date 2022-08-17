@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
-{% block content %}
-<a href="https://www.oceanbrasil.com/">Link Ocean</a>
-{% if usuario[2] == "Professor" %}
-        <h2>Bem vindo Professor {{usuario[1]}}</h2>
-    {% else %}
-        <h2>Bem vindo Aluno</h2>
-    {% endif %}
+    {% block content %}
+        {% for posts in posts %}
+            <article class="post">
+                <header>
+                    <div>
+                        <h1>{{ posts.title }}</h1>
+                    <div class="about"> Criado por {{ posts['author'] }} em {{ posts['created'].strftime('%Y-%m-%d') }}</div>
+                    </div>
+                </header>
+                <p class="body"> {{ posts['body'] }}</p>
+            </article>
+            {% if not loop.last %}
+            <hr>
+            {% endif %}
+        {% endfor %}
+    {% endblock%}
 
-    {% for alunos in aluno %}
-        <h3>{{alunos}}</h3>
-    {%endfor%}
-    <h1>{{ curso }}</h1>
-    <h1>{{ nome }}</h1>
-    <h1>Jackson Gonçalves Gomes<h1>
-    <h2>jackson.am2009@gmail.com<h2>
-    <h3>(92) 98238-2882</h3>
-{% endblock %}
+            

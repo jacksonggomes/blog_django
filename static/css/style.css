@@ -1,0 +1,15 @@
+html{
+    height: 50%;
+    background: #ff0;
+}
+body{
+    background: white;
+    padding-left: 10rem;
+}
+
+.post .about{
+    color: blue;
+}
+.post .body{
+    color: brown;
+}
