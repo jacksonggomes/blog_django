@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-        <html>
-            <head>
-                <title> Contatos </title>
-            </head>
-            <body>
-                <a href="https://www.oceanbrasil.com/">Link Ocean</a>
-                {% if usuario[2] == "Professor" %}
-                <h2>Bem vindo Professor {{usuario[1]}}</h2>
-                {% else %}
-                <h2>Bem vindo Aluno</h2>
-                {% endif %}
+{% extends 'base.html' %}
+{% block content %}
+<a href="https://www.oceanbrasil.com/">Link Ocean</a>
+{% if usuario[2] == "Professor" %}
+        <h2>Bem vindo Professor {{usuario[1]}}</h2>
+    {% else %}
+        <h2>Bem vindo Aluno</h2>
+    {% endif %}
 
-                {% for alunos in aluno %}
-                <h3>{{alunos}}</h3>
-                {%endfor%}
-                <h1>{{ curso }}</h1>
-                <h1>{{ nome }}</h1>
-                <h1>Jackson Gonçalves Gomes<h1>
-                <h2>jackson.am2009@gmail.com<h2>
-                <h3>(92) 98238-2882</h3>
-            </body>
-        </html>
+    {% for alunos in aluno %}
+        <h3>{{alunos}}</h3>
+    {%endfor%}
+    <h1>{{ curso }}</h1>
+    <h1>{{ nome }}</h1>
+    <h1>Jackson Gonçalves Gomes<h1>
+    <h2>jackson.am2009@gmail.com<h2>
+    <h3>(92) 98238-2882</h3>
+{% endblock %}
